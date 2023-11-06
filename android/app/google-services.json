@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "393478207746",
+    "project_id": "dab-6cfc3",
+    "storage_bucket": "dab-6cfc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393478207746:android:4b03789d1216eaf945ea1b",
+        "android_client_info": {
+          "package_name": "com.example.dab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9_7bJ_90rranri2aDlNuJ8I_xbfjR7ao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
