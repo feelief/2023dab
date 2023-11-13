@@ -89,7 +89,7 @@ class _TakePhotoState extends State<TakePhoto> {
                   children: [
                     const SizedBox(height: 50),
                     _buildPhotoArea(),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 20),
                     _buildButton(),
                     /*IconButton(
                   icon: Icon(
@@ -110,6 +110,36 @@ class _TakePhotoState extends State<TakePhoto> {
                         }
                       })),
                       */
+                    const SizedBox(height: 15),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Experience with',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            )),
+                        const SizedBox(width: 10),
+                        GestureDetector(
+                          child: Container(
+                            height: 55,
+                            width: 55,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/input_image.jpg'),
+                                  fit: BoxFit.cover),
+                            ),
+                          ),
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoadingRecipe())),
+                        ),
+                      ],
+                    ),
                     const Expanded(child: SizedBox())
                   ],
                 ),

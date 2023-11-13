@@ -18,7 +18,7 @@ class _LoadingRecipeState extends State<LoadingRecipe> {
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 5),
+      const Duration(seconds: 4),
       () => Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => MoveToResult()),
@@ -47,16 +47,17 @@ class _LoadingRecipeState extends State<LoadingRecipe> {
             image: DecorationImage(
                 image: AssetImage('images/steak_bap.jpg'), fit: BoxFit.contain),
           ),*/
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SpinKitFadingCube(
+            const SizedBox(height: 100),
+            const SpinKitFadingCube(
               color: Colors.white,
               size: 50.0,
             ),
-            SizedBox(height: 30),
-            Text('Searching for Recipes',
+            const SizedBox(height: 30),
+            const Text('Searching for Recipes',
                 style: TextStyle(
                   shadows: [
                     Shadow(
@@ -70,6 +71,37 @@ class _LoadingRecipeState extends State<LoadingRecipe> {
                   color: Colors.white,
                   letterSpacing: 0.8,
                 )),
+            const SizedBox(height: 15),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('With',
+                    style: TextStyle(
+                      shadows: [
+                        Shadow(
+                          offset: Offset(2, 2),
+                          color: Colors.blueGrey,
+                          blurRadius: 3.0,
+                        )
+                      ],
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                      letterSpacing: 0.8,
+                    )),
+                const SizedBox(width: 10),
+                Container(
+                  height: 110,
+                  width: 110,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/input_image.jpg'),
+                        fit: BoxFit.cover),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

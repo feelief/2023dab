@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:dab/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -15,13 +14,13 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Timer(
+    /*Timer(
       const Duration(seconds: 6),
       () => Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const HomeSreen()),
       ),
-    );
+    );*/
   }
 
   @override
@@ -96,26 +95,71 @@ class _SplashScreenState extends State<SplashScreen> {
                             )),
                       ],
                     ),
-                    const SizedBox(width: 40),
-                    Stack(
+                    const SizedBox(width: 25),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SpinKitFadingCube(
-                          color: Colors.blueGrey[800],
-                          size: 53.0,
+                        const SizedBox(height: 20),
+                        Stack(
+                          children: [
+                            SpinKitFadingCube(
+                              color: Colors.blueGrey[800],
+                              size: 53.0,
+                            ),
+                            const SpinKitFadingCube(
+                              color: Colors.white,
+                              size: 50.0,
+                            ),
+                          ],
                         ),
-                        const SpinKitFadingCube(
-                          color: Colors.white,
-                          size: 50.0,
-                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'START',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                shadows: [
+                                  Shadow(
+                                      offset: Offset(1, 1),
+                                      color: Colors.black,
+                                      blurRadius: 2.0),
+                                ],
+                              ),
+                            ),
+                            IconButton(
+                              icon: const Icon(
+                                  Icons.arrow_circle_right_outlined,
+                                  shadows: [
+                                    Shadow(
+                                        offset: Offset(1, 1),
+                                        color: Colors.black,
+                                        blurRadius: 2.0)
+                                  ]),
+                              color: Colors.white,
+                              iconSize: 40,
+                              onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomeSreen()),
+                              ),
+                            ),
+                          ],
+                        )
                       ],
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(height: 10),
                 Stack(
                   children: [
                     Transform.translate(
-                      offset: const Offset(1, 1),
+                      offset: const Offset(0.5, 0.5),
                       child: const Text(
                         'The AI Service Just For Your Refrigerator\nThat Can Make Your Cooking Life Easier',
                         style: TextStyle(

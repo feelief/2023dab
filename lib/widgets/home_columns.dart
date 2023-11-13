@@ -360,55 +360,84 @@ class Main4 extends StatelessWidget {
               SizedBox(
                 width: 70,
                 height: 70,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/steak_bap.jpg'),
+                child: Avatar(
+                  assetImage: 'assets/images/steak_bap.jpg',
                 ),
               ),
               SizedBox(width: 5),
               SizedBox(
-                width: 70,
-                height: 70,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/tteokbokki2.jpg'),
-                ),
-              ),
+                  width: 70,
+                  height: 70,
+                  child: Avatar(
+                    assetImage: 'assets/images/tteokbokki2.jpg',
+                  )),
 
               SizedBox(width: 5),
               SizedBox(
-                width: 70,
-                height: 70,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/yooboochobab.jpg'),
-                ),
-              ),
+                  width: 70,
+                  height: 70,
+                  child: Avatar(
+                    assetImage: 'assets/images/yooboochobab.jpg',
+                  )),
               SizedBox(width: 5),
               SizedBox(
-                width: 70,
-                height: 70,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/galchijorim.jpg'),
-                ),
-              ),
+                  width: 70,
+                  height: 70,
+                  child: Avatar(
+                    assetImage: 'assets/images/galchijorim.jpg',
+                  )),
               SizedBox(width: 5),
               SizedBox(
-                width: 70,
-                height: 70,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/jeonbokjook.jpg'),
-                ),
-              ),
+                  width: 70,
+                  height: 70,
+                  child: Avatar(
+                    assetImage: 'assets/images/jeonbokjook.jpg',
+                  )),
               SizedBox(width: 5),
               SizedBox(
-                width: 70,
-                height: 70,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/creampasta.jpg'),
-                ),
-              )
+                  width: 70,
+                  height: 70,
+                  child: Avatar(
+                    assetImage: 'assets/images/creampasta.jpg',
+                  ))
             ]),
           ),
         ],
       ),
     );
+  }
+}
+
+class Avatar extends StatelessWidget {
+  final String assetImage;
+  const Avatar({
+    super.key,
+    required this.assetImage,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        child: CircleAvatar(
+          backgroundImage: AssetImage(assetImage),
+        ),
+        onTap: () {
+          showDialog(
+              barrierColor: Colors.transparent,
+              context: context,
+              barrierDismissible: true,
+              builder: ((context) {
+                return AlertDialog(
+                  backgroundColor: Colors.transparent,
+                  content: Container(
+                      width: 250,
+                      height: 250,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(assetImage), fit: BoxFit.cover),
+                      )),
+                );
+              }));
+        });
   }
 }
